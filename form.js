@@ -195,8 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //     console.error('Error parsing custom data:', error);
     //     return;
     // }
-
-    console.log(cu);
   
     const currentPath = window.location.pathname;
     
