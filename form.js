@@ -173,7 +173,7 @@
 //   event.target.reset();
 // }
 document.addEventListener('DOMContentLoaded', () => {
-    const scriptElement = document.querySelector('script[src="form.js"]');
+    const scriptElement = document.querySelector('script[src="https://abhigyadufare.github.io/dynamicForm/form.js"]');
   
     if (!scriptElement) {
         console.error('Script element with src="form.js" not found.');
