@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const path = scriptElement.getAttribute('path');
     const courses = scriptElement.getAttribute('courses')
   
-    if (!customPath || !customCourses) {
+    if (!path || !courses) {
         console.error('Custom data attribute not found in script element.');
         return;
     }
@@ -196,15 +196,15 @@ document.addEventListener('DOMContentLoaded', () => {
     //     return;
     // }
 
-    console.log(customCourses);
+    console.log(cu);
   
     const currentPath = window.location.pathname;
     
-    if (customPath.includes(currentPath)) {
-        createForm(customCourses);
+    if (path.includes(currentPath)) {
+        createForm(courses);
     }
-    console.log(customPath);
-    console.log(customCourses);
+    console.log(path);
+    console.log(courses);
   });
   
   function createForm(courseOptions) {
