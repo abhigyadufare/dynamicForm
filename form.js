@@ -180,28 +180,31 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
   
-    const customData = scriptElement.getAttribute('custom-data');
+    const path = scriptElement.getAttribute('path');
+    const courses = scriptElement.getAttribute('courses')
   
-    if (!customData) {
+    if (!customPath || !customCourses) {
         console.error('Custom data attribute not found in script element.');
         return;
     }
   
-    let parsedData;
-    try {
-        parsedData = JSON.parse(customData);
-    } catch (error) {
-        console.error('Error parsing custom data:', error);
-        return;
-    }
+    // let parsedData;
+    // try {
+    //     parsedData = JSON.parse(customData);
+    // } catch (error) {
+    //     console.error('Error parsing custom data:', error);
+    //     return;
+    // }
+
+    console.log(customCourses);
   
     const currentPath = window.location.pathname;
     
-    if (parsedData.path.includes(currentPath)) {
-        createForm(parsedData.courses);
+    if (customPath.includes(currentPath)) {
+        createForm(customCourses);
     }
-    console.log(parsedData);
-    console.log(parsedData.path);
+    console.log(customPath);
+    console.log(customCourses);
   });
   
   function createForm(courseOptions) {
@@ -289,8 +292,10 @@ document.addEventListener('DOMContentLoaded', () => {
     select.id = selectId;
     select.name = selectName;
     select.required = true;
-  
-    options.map(optionText => {
+
+    console.log(options);
+
+    options.map((optionText) => {
         const option = document.createElement('option');
         option.textContent = optionText;
         option.value = optionText;
