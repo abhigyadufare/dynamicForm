@@ -109,9 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
     select.name = selectName;
     select.required = true;
 
-    console.log(typeof(options));
-
-    options.map((optionText) => {
+    console.log(options);
+    JSON.parse(options).map((optionText) => {
         const option = document.createElement('option');
         option.textContent = optionText;
         option.value = optionText;
