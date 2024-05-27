@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     select.name = selectName;
     select.required = true;
 
-    console.log(options);
+    console.log(typeof(options));
 
     options.map((optionText) => {
         const option = document.createElement('option');
