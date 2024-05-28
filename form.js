@@ -58,7 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
     form.appendChild(courseSelectWrapper);
   
     createField(form, { labelText: 'NEET Score:', inputType: 'number', inputId: 'neetScore', inputName: 'neetScore', required: true});
-    if (window.location.hostname === 'abhigyadufare.github.io/dynamicForms/') {
+    
+    //hostname checker
+    if (window.location.hostname === 'abhigyadufare.github.io') {
       createField(form, { labelText: 'Preferred College:', inputType: 'text', inputId: 'preferredCollege', inputName: 'preferredCollege', required: true });
   }
     createCheckboxField(form, 'I agree to receive information by signing up on Careerkick services', 'agreeCheckbox');
