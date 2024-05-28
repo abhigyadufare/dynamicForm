@@ -139,6 +139,16 @@ document.addEventListener('DOMContentLoaded', () => {
     form.appendChild(wrapper);
   }
 
+  function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  const utmData = {
+    source: getUrlParameter('utm_source'),
+    sourceId: getUrlParameter('campaign_id')
+  };
+
   function submitForm(event) {
     event.preventDefault(); 
   
@@ -148,12 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
         email: document.getElementById('email').value,
         whatsappNo: document.getElementById('whatsappNo').value,
         fatherName: document.getElementById('fatherName').value,
-      
         city: document.getElementById('city').value,
         state: document.getElementById('state').value,
         courseSelection: document.getElementById('courseSelection').value,
         neetScore: document.getElementById('neetScore').value,
-        agreeCheckbox: document.getElementById('agreeCheckbox').checked
+        agreeCheckbox: document.getElementById('agreeCheckbox').checked,
+        formSource: utmData
     };
   
     // Check if courseSelection is "Select Course"
